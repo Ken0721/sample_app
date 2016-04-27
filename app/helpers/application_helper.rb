@@ -4,7 +4,7 @@ module ApplicationHelper
 	if page_title.empty? #check if the page_tile is empty
 	  base_title  #use the var base_title if the var is empty
 	else
-	  page_title + "|" + base_title
+	  page_title + " | " + base_title
 	end
   end
 end
