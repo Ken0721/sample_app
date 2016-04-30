@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+p1:
+  name: MyString
+  user_id: 
+  created_at: <%= 2.hours.ago %>
+  user: michael
+
+p2:
+  name: MyString
+  user_id: 
+  created_at: <%= 1.hours.ago %>
+  user: michael
+
+most_recent:
+  name: "food"
+  created_at: <%= Time.zone.now %>
+  user: michael
+
+<% 30.times do |n| %>
+micropost_<%= n %>:
+  name: <%= Faker::Lorem.word %>
+  created_at: <%= 42.days.ago %>
+  user: michael
+<% end %>
