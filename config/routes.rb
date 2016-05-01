@@ -16,11 +16,9 @@ Rails.application.routes.draw do
   
 #  get 'static_pages/contact'
   get 'contact' => 'static_pages#contact'
-#  get 'static_pages/home'
-  get 'home' => 'static_pages#home'
 #  get 'users/new'
   get 'signup' => 'users#new'
-
+	get 'projects' => 'users#projects'
 	get 'login' => 'sessions#new'
 	post 'login' => 'sessions#create'
 	delete 'logout' => 'sessions#destroy'
