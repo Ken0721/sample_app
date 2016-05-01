@@ -9,6 +9,10 @@ class UsersController < ApplicationController
 		@user = User.new
   end
 	
+	def edit
+		@user = User.find(params[:id])
+	end
+		
 	def projects
 		@user = User.find(params[:id])
 		@projects = @user.projects.paginate(page: params[:page])
