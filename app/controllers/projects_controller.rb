@@ -25,7 +25,7 @@ class ProjectsController < ApplicationController
     end
 		
 		def correct_user
-			@project = current_user.project.find_by(id: prams[:id])
+			@project = current_user.projects.find_by(id: params[:id])
 			redirect_to root_url if @project.nil?
 		end
 end
