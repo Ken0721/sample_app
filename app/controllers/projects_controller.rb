@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
 	 before_action :logged_in_user, only: [:create, :destroy]
    before_action :correct_user, only: :destroy
+
   def create
     @project = current_user.projects.build(project_params)
     if @project.save
@@ -25,7 +26,10 @@ class ProjectsController < ApplicationController
     end
 		
 		def correct_user
+			logger.debug("***************debug**************")
 			@project = current_user.projects.find_by(id: params[:id])
+			logger.debug(@project.id)
+			logger.debug("***************debug**************")
 			redirect_to root_url if @project.nil?
 		end
 end
