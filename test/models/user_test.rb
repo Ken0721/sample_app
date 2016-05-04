@@ -63,4 +63,22 @@ class UserTest < ActiveSupport::TestCase
 		michael.unfollow(archer)
 		assert_not michael.following?(archer)
 	end
+
+	test "feed should have the right projects" do
+		michael = users(:michael)
+		lana = users(:lana)
+		archer = users(:archer)
+		#"confirm that michael is following lana and lana's projects are shown"
+		lana.projects.each do |project_following|
+			assert micheal.feed.include?(project_following)
+		end
+		#"feed should have own projects"
+		michael.projects.each do |project_self|
+			assert michael.feed.include?(project_self)
+		end
+		#"feed should not have the unfollowing user's projects"
+		archer.projects.each do |project_unfollowing|
+			assert archer.feed.include?(project_unfollowing)
+		end
+	end	
 end

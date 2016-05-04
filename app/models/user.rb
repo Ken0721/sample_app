@@ -38,7 +38,7 @@ class User < ActiveRecord::Base
   end
 
 	def feed
-		Project.where("user_id =?", id)
+		Project.where("user_id =?", self.id)
 	end
 	
 	def follow(other_user)
