@@ -11,6 +11,10 @@ module SessionsHelper
 		cookies.permanent[:remember_token] = user.remember_token
 	end
 
+	def current_user?(user)
+		user == current_user
+	end
+
 #	#get remmber_token's user
 	def current_user
 	#if the user session exists
